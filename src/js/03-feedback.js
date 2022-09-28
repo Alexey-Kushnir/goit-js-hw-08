@@ -43,7 +43,16 @@ function populateTextarea() {
   savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
   if (savedMessage) {
-    email.value = savedMessage.email;
-    message.value = savedMessage.message;
+    if (savedMessage.email) {
+      email.value = savedMessage.email;
+    } else {
+      email.value = '';
+    }
+
+    if (savedMessage.message) {
+      message.value = savedMessage.message;
+    } else {
+      message.value = '';
+    }
   }
 }
