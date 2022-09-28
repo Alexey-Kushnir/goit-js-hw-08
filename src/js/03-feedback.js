@@ -14,6 +14,16 @@ form.addEventListener('input', throttle(onTextInput, 500));
 function onFormSubmit(e) {
   e.preventDefault();
 
+  if (!message.value) {
+    alert('Поле Message не заполнено');
+    return;
+  }
+
+  if (!email.value) {
+    alert('Поле Email не заполнено');
+    return;
+  }
+
   if (savedMessage) {
     console.log(savedMessage);
   } else {
